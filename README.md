@@ -11,6 +11,10 @@ This project provides a user-friendly and secure way for users to connect their 
 
 ## Demo
 
+Web3Modal needs Metamask so install this extension !
+
+Demo site https://nabetse00.github.io/test-argent-wagmi-connector/
+
 ![argent-demo](https://user-images.githubusercontent.com/4185026/223785910-99a3cc8f-c1ee-4223-b918-09a86d511409.gif)
 
 

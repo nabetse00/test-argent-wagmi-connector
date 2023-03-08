@@ -60,7 +60,6 @@ function App() {
 
       <br />
 
-
       <Web3Modal
         projectId={projectId}
         ethereumClient={ethereumClient}
