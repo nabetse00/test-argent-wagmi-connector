@@ -28,7 +28,7 @@ git clone https://github.com/nabetse00/test-argent-wagmi-connector
 
 Copy `.env.local.example` to `.env.local`
 
-Change 
+Change WalletConnect porjectId:
 
 ```
 VITE_WC_PROJECT_ID=XXXXXXXXXXXXXXXXXXXXXXXXx
@@ -45,7 +45,6 @@ Run the development server using the command
 npm run dev
 ```
 
-## Usage
 Once the project is running, you can open it in your browser at 
 ```
 http://localhost:5173/test-argent-wagmi-connector/
@@ -53,8 +52,62 @@ http://localhost:5173/test-argent-wagmi-connector/
 
 The application allows users to connect their Ethereum wallets to the application using Web3Modal.
 
+## Usage
+
+To use [argent-wagmi-connector](https://github.com/nabetse00/) in your project:
+
+1. Install via npm
+```
+npm i @nabetse/argent-wagmi-connector
+```
+
+2. configure Argent custom connector options for example:
+``` ts 
+  const connector = new ArgentWagmiConnector({
+    chains: [zkSyncTestnet],
+    options: {
+      chainId: 280,
+      rpcUrl: "https://zksync2-testnet.zksync.dev",
+      walletConnect: {
+        metadata: {
+          name: "Cool dapp",
+          description: "Description of a cool dapp",
+          url: "https://example.com",
+          icons: ["icon url here"]
+        }
+      }
+    }
+  })
+```
+
+3. Add it to wagmi client allong with web3modal
+```ts
+  const wagmiClient = createClient({
+    autoConnect: false,
+    connectors: [
+      connector,
+      ...modalConnectors(
+        { version: '2', appName: 'web3Modal', chains: chains, projectId, }
+      ),
+    ],
+    provider
+  })
+```
+Note that before you must configure chains and walletConnectProdider.
+projectId is obteined from WalletConnect [here](https://cloud.walletconnect.com/sign-in) this is now mandatory for web3modal.
+
+```ts
+const chains = [zkSync, zkSyncTestnet];
+
+const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])
+```
+
+Also remember web3modal needs Metamask extension to work so install it from [here](https://metamask.io/download/)
+
 ## Custom Wallet Connector
-The [argent-wagmi-connector](https://github.com/nabetse00/argent-wagmi-connector) wagmi custom wallet connector c extends the Connector class provided by Wagmi and implements the necessary methods to connect to the Argent wallet.
+The [argent-wagmi-connector](https://github.com/nabetse00/argent-wagmi-connector) wagmi custom wallet connector extends the Connector class provided by Wagmi and implements the necessary methods to connect to the Argent wallet.
+
+npm here package is here: https://www.npmjs.com/package/@nabetse/argent-wagmi-connector
 
 
 # Resources
