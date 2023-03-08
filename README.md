@@ -9,6 +9,10 @@ This project provides a user-friendly and secure way for users to connect their 
 - The custom wallet connector is here [argent-wagmi-connector](https://github.com/nabetse00/argent-wagmi-connector).
 - demo page https://nabetse00.github.io/test-argent-wagmi-connector/
 
+## Demo
+
+![argent-demo](https://user-images.githubusercontent.com/4185026/223785910-99a3cc8f-c1ee-4223-b918-09a86d511409.gif)
+
 
 ## Installation
 To install and run this project on your local machine, follow these steps:
