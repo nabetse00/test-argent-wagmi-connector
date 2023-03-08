@@ -68,7 +68,7 @@ function App() {
         enableNetworkView={true}
         themeMode='light'
         walletImages={{
-          argentWallet: '/wallet_argent.svg'
+          argentWallet: '/test-argent-wagmi-connector/wallet_argent.svg'
         }}
       />
 
