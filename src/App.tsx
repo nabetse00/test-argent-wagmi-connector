@@ -1,33 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import ArgentWagmiConnector from "@nabetse/argent-wagmi-connector";
+
+import {
+  EthereumClient,
+  modalConnectors,
+  walletConnectProvider
+} from "@web3modal/ethereum";
+import './App.css';
+
+import { zkSync, zkSyncTestnet } from 'wagmi/chains';
+
+import { Web3Button, Web3Modal } from "@web3modal/react";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const projectId = import.meta.env.VITE_WC_PROJECT_ID;
+  const chains = [zkSync, zkSyncTestnet];
+  const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])
+
+
+  const connector = new ArgentWagmiConnector({
+    chains: [zkSyncTestnet],
+    options: {
+      chainId: 280,
+      rpcUrl: "https://zksync2-testnet.zksync.dev",
+      walletConnect: {
+        metadata: {
+          name: "Cool dapp",
+          description: "Description of a cool dapp",
+          url: "https://example.com",
+          icons: ["https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a"]
+        }
+      }
+    }
+  })
+
+  const wagmiClient = createClient({
+    autoConnect: false,
+    connectors: [
+      connector,
+      ...modalConnectors(
+        { version: '2', appName: 'web3Modal', chains: chains, projectId, }
+      ),
+    ],
+    provider
+  })
+
+  const ethereumClient = new EthereumClient(wagmiClient, chains);
+
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+      <WagmiConfig client={wagmiClient}>
+        <div className="App">
+          <Web3Button
+            balance='show' />
+        </div>
+      </WagmiConfig>
+
+      <br />
+
+
+      <Web3Modal
+        projectId={projectId}
+        ethereumClient={ethereumClient}
+        enableAccountView={true}
+        enableNetworkView={true}
+        themeMode='light'
+        walletImages={{
+          argentWallet: '/wallet_argent.svg'
+        }}
+      />
+
+    </>
   )
 }
 
