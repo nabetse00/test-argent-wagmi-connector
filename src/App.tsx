@@ -22,8 +22,8 @@ function App() {
   const connector = new ArgentWagmiConnector({
     chains: [zkSyncTestnet],
     options: {
-      chainId: 280,
-      rpcUrl: "https://zksync2-testnet.zksync.dev",
+      chainId: zkSyncTestnet.id,
+      rpcUrl: zkSyncTestnet.rpcUrls.default.http[0],
       walletConnect: {
         metadata: {
           name: "Cool dapp",
