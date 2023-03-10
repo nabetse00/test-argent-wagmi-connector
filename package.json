@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nabetse/argent-wagmi-connector": "^1.0.3",
+    "@nabetse/argent-wagmi-connector": "^1.0.4",
     "@web3modal/ethereum": "^2.1.3",
     "@web3modal/react": "^2.1.3",
     "react": "^18.2.0",
