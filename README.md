@@ -9,6 +9,8 @@ This project provides a user-friendly and secure way for users to connect their 
 - The custom wallet connector is here [argent-wagmi-connector](https://github.com/nabetse00/argent-wagmi-connector).
 - demo page https://nabetse00.github.io/test-argent-wagmi-connector/
 
+![App screenshot](./media/screenshot.png)
+
 ## Demos
 
 Web3Modal needs Metamask so install this extension !
