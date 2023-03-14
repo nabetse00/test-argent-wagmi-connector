@@ -17,7 +17,7 @@ Demo site https://nabetse00.github.io/test-argent-wagmi-connector/
 
 ![argent-demo](https://user-images.githubusercontent.com/4185026/223785910-99a3cc8f-c1ee-4223-b918-09a86d511409.gif)
 
-[Argent Message Signing Demo](https://www.youtube.com/watch?v=WRBVmZuJ6rI)
+[Argent Message Signing Demo](https://www.youtube.com/watch?v=S0j4amUJKvA)
 
 ## Installation
 To install and run this project on your local machine, follow these steps:
@@ -124,7 +124,7 @@ https://user-images.githubusercontent.com/4185026/223789984-ac7d3210-99ae-417d-b
 
 DEMO 2: Argent Login and message signing
 
-https://www.youtube.com/watch?v=WRBVmZuJ6rI
+https://www.youtube.com/watch?v=S0j4amUJKvA
 
 
 
