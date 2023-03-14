@@ -9,7 +9,7 @@ This project provides a user-friendly and secure way for users to connect their 
 - The custom wallet connector is here [argent-wagmi-connector](https://github.com/nabetse00/argent-wagmi-connector).
 - demo page https://nabetse00.github.io/test-argent-wagmi-connector/
 
-## Demo
+## Demos
 
 Web3Modal needs Metamask so install this extension !
 
@@ -17,6 +17,7 @@ Demo site https://nabetse00.github.io/test-argent-wagmi-connector/
 
 ![argent-demo](https://user-images.githubusercontent.com/4185026/223785910-99a3cc8f-c1ee-4223-b918-09a86d511409.gif)
 
+[Argent Message Signing Demo](https://www.youtube.com/watch?v=WRBVmZuJ6rI)
 
 ## Installation
 To install and run this project on your local machine, follow these steps:
@@ -115,9 +116,18 @@ npm here package is here: https://www.npmjs.com/package/@nabetse/argent-wagmi-co
 - [Web3Modal SDK docs](https://docs.walletconnect.com/2.0/web3modal/about)
 - [Wagmi Website](https://wagmi.sh/) 
 
-# video
+# videos
+
+DEMO 1: Simple Argent Login
 
 https://user-images.githubusercontent.com/4185026/223789984-ac7d3210-99ae-417d-bcba-0859de138dd8.mp4
+
+DEMO 2: Argent Login and message signing
+
+https://www.youtube.com/watch?v=WRBVmZuJ6rI
+
+
+
 
 
 
