@@ -32,7 +32,7 @@ export function SignMessage() {
     setTimeout(() => {
       console.log("signing timeout !");
       setIsSigning(false);
-    }, 60000);
+    }, 10000);
   }
 
   function handleChange(event: ChangeEvent<HTMLTextAreaElement>) {
