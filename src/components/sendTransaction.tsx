@@ -22,7 +22,6 @@ export function SendTransaction() {
 
   const balance = useBalance({
     address: address,
-    chainId: 280,
   });
 
   const { config } = usePrepareSendTransaction({
