@@ -79,7 +79,7 @@ form {
   box-shadow: 0px 8px 8px #222;
   background-color: grey;
 }
-textarea {
+textarea, input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;

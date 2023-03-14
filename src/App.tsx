@@ -14,6 +14,7 @@ import { configureChains, createClient, useAccount, WagmiConfig } from "wagmi";
 import { Profile } from "./components/profile";
 import { useEffect } from "react";
 import { SignMessage } from "./components/signMessage";
+import { SendTransaction } from "./components/sendTransaction";
 
 function App() {
   const projectId = import.meta.env.VITE_WC_PROJECT_ID;
@@ -76,6 +77,8 @@ function App() {
         <br />
 
         <SignMessage />
+        <br />
+        <SendTransaction />
 
         <Web3Modal
           projectId={projectId}

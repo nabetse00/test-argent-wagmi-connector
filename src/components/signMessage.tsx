@@ -1,5 +1,4 @@
 import { useAccount, useSignMessage } from "wagmi";
-// import { verifyMessage } from 'ethers/lib/utils'
 
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { verifySignature } from "../utils/signatureVerification";
